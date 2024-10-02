@@ -16,4 +16,4 @@ print("Numero entero: " + str(numero_entero) +
 print(f"Tipo de variable de {str(numero_entero)}:{type(numero_entero)}\n" +
       f"Tipo de variable de {str(numero_decimales)}:{type(numero_decimales)}\n" +
       f"Tipo de variable de {cadena_caracteres}:{type(cadena_caracteres)}\n"+
-      f"Tipo de variable de {str(booleana)}:{type(booleana)}")
+      f"Tipo de vatiable de {str(booleana)}:{type(booleana)}")
