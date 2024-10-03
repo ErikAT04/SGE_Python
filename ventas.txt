@@ -1,0 +1,2 @@
+Nombre: Si;Stock: 10;Precio: 10.0
+Nombre: No;Stock: 10;Precio: 10.0

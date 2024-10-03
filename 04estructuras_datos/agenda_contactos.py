@@ -1,5 +1,5 @@
 def verificarNum(numTlf) -> bool:
-    return numTlf.isDigit() and numTlf>0 and len(numTlf)<=9 
+    return numTlf>0 and numTlf<=999999999 
 
 def insertar(numTlf, nombre, agenda):
     if(numTlf in agenda):
@@ -37,9 +37,10 @@ while(opt!=0):
         match(opt):
             case 1:
                 nombre = input("Escribe el nombre: ")
-                numtlf:int = 0
+                numtlf = 0
                 while(numtlf == 0):
-                    numtlf = input("Escribe el número de teléfono: ")
+                    print("Escribe el número de teléfono:")
+                    numtlf = int(input())
                     if (verificarNum(numtlf)):
                         insertar(int(numtlf), nombre, agenda)
                     else:
@@ -50,13 +51,8 @@ while(opt!=0):
                 while(numtlf == 0):
                     try:
                         numtlf = int(input("Escribe el número de teléfono: "))
-                        contacto:Contacto = buscarContacto(numtlf, agenda)
-                        if (contacto != any):
-                            print("No se ha encontrado un contacto con ese número")
-                        else:
-                            nombre = input("Escribe un nuevo nombre para este número: ")
-                            contacto.nombre = nombre
-                            actualizarContacto(contacto, agenda)
+                        nombre = input("Escribe un nuevo nombre para este número: ")
+                        actualizar(numtlf, nombre, agenda)
                     except:
                         print("El valor solo puede ser numérico")
                         numtlf = 0
@@ -65,22 +61,17 @@ while(opt!=0):
                 while(numtlf == 0):
                     try:
                         numtlf = int(input("Escribe el número de teléfono: "))
-                        contacto:Contacto = buscarContacto(numtlf, agenda)
-                        if (contacto != any):
-                            print("No se ha encontrado un contacto con ese número")
-                        else:
-                            eliminarContacto(contacto, agenda)
+                        borrar(numtlf, agenda)
                     except:
                         print("El valor solo puede ser numérico")
                         numtlf = 0
             case 4:
-                agenda.sort()
-                for contacto in agenda:
-                    print (contacto.nombre + " " + contacto.numtlf)
+                for contacto, telf in agenda.items():
+                    print(f"{contacto} : {telf}")
             case 0:
                 print("¡Hasta luego!")
             case _:
                 print("Opción no válida")
     except:
-        print("Tiene que ser un valor no numérico")
+        print("Tiene que ser un valor numérico")
         opt = -1

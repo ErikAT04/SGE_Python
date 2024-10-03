@@ -1,0 +1,1 @@
+Nombre: si ; Stock: 12 ; Precio: 10.0

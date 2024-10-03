@@ -44,7 +44,7 @@ for x in diccionario.values():
 for x in diccionario.keys():
     print(x) #ForEach de claves 2.0
 
-for x, y in diccionario.items:
+for x, y in diccionario.items():
     print(f"Clave: {x} ; valor: {y}") #x es clave e y es valor
 
 
